@@ -1,0 +1,32 @@
+<!DOCTYPE struts PUBLIC "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+    <package name="default" extends="struts-default">
+
+        <action name="listarProductos" class="org.example.actions.ProductoAction" method="listar">
+            <result name="success">/dashboard.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <action name="detalleProducto" class="org.example.actions.ProductoAction" method="detalle">
+            <result name="success">/detalle.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <action name="comprarProducto" class="org.example.actions.ProductoAction" method="comprar">
+            <result name="success">/success.jsp</result>
+            <result name="error">/error.jsp</result>
+        </action>
+
+        <action name="login" class="org.example.actions.AuthAction" method="login">
+            <result name="success">/dashboard.jsp</result>
+            <result name="error">/login.jsp</result>
+        </action>
+
+        <action name="register" class="org.example.actions.AuthAction" method="register">
+            <result name="success">/dashboard.jsp</result>
+            <result name="error">/register.jsp</result>
+        </action>
+
+    </package>
+</struts>
