@@ -2,8 +2,9 @@ package org.example;
 
 import com.opensymphony.xwork2.ActionSupport;
 import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
-
+import org.example.Database;
 public class ProductoAction extends ActionSupport {
     private int id;
     private Producto producto;
@@ -19,6 +20,8 @@ public class ProductoAction extends ActionSupport {
         } catch (SQLException e) {
             addActionError("Error al obtener la lista de productos");
             return ERROR;
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
         }
     }
 
